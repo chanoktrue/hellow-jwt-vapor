@@ -15,5 +15,17 @@ func routes(_ app: Application) throws {
         return .ok
     }
     
+    app.get("login") { req -> [String: String] in
+        
+        let payload = TestPayload(
+            subject: "Vaport",
+            expiration: .init(value: .distantFuture),
+            isAdmin: true
+        )
+        
+        return try ["token": req.jwt.sign(payload)]
+        
+    }
+    
     
 }
