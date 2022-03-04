@@ -7,7 +7,7 @@
 
 import Vapor
 import JWTKit
-import Darwin
+//import Darwin
 
 struct TestPayload: JWTPayload {
     
@@ -15,11 +15,15 @@ struct TestPayload: JWTPayload {
         case subject = "sub"
         case expiration = "exp"
         case isAdmin = "admin"
+        case email = "email"
+        case password = "pass"
     }
     
     var subject: SubjectClaim
     var expiration: ExpirationClaim
     var isAdmin: Bool
+    var email: String
+    var password: String
     
     func verify(using signer: JWTSigner) throws {
         try self.expiration.verifyNotExpired()

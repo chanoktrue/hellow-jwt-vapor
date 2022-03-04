@@ -9,6 +9,7 @@ public func configure(_ app: Application) throws {
     //JWT
     app.jwt.signers.use(.hs256(key: "secret"))
     
+
     // register routes
     try routes(app)
 }
