@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Payload.swift
 //  
 //
 //  Created by Thongchai Subsaidee on 3/3/22.
@@ -9,7 +9,7 @@ import Vapor
 import JWTKit
 //import Darwin
 
-struct TestPayload: JWTPayload {
+struct Payload: JWTPayload {
     
     enum CodingKeys: String, CodingKey {
         case subject = "sub"
